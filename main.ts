@@ -1,8 +1,13 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const ENTRY =
-  "Checked in for two days: one shared moon, weather that changed hourly without notice, and every local asking if I came in peace — 4 stars, would orbit again.";
+// The review is built from three parts: the check-in frame, the observations, and the rating kicker.
+const FRAME = "Checked in for two days: ";
+const OBSERVATIONS =
+  "one shared moon, weather that changed hourly without notice, and every local asking if I came in peace ";
+const RATING = "— 4 stars, would orbit again.";
+
+const ENTRY = FRAME + OBSERVATIONS + RATING;
 
 function checkEntry(text: string): void {
   const length = [...text].length;
